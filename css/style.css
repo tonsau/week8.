@@ -1,0 +1,113 @@
+:root {
+    --my-padding: 0.4rem;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    color: azure;
+    display: grid;
+    font-family: 'Sigmar', cursive;
+    font-weight: bolder;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 0.3fr 2fr 1fr 1fr 0.5fr; 
+    grid-template-areas:
+    "header menu menu menu"
+    "hero hero hero hero"
+    "main main image image"
+    "main main extra extra"
+    "banner banner banner banner"
+    ;
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+header {
+    align-items: center;
+    display: grid;
+    background-color: aquamarine;
+    grid-area: header;
+    padding: var(--my-padding); 
+}
+
+.menu {
+    align-items: center;
+    display: grid;
+    background-color: coral;
+    grid-area: menu;
+    padding: var(--my-padding);
+}
+
+.hero {
+    align-items: center;
+    display: grid;
+    background-color: rgb(45, 126, 14);
+    grid-area: hero;
+    padding: var(--my-padding);
+}
+
+.main {
+    align-items: center;
+    display: grid;
+    background-color: rgb(141, 203, 240);
+    grid-area: main;
+    padding: var(--my-padding);
+}
+
+.image {
+    align-items: center;
+    display: grid;
+    background-color: rgb(184, 26, 52);
+    grid-area: image;
+    padding: var(--my-padding);
+}
+
+.extra {
+    align-items: center;
+    display: grid;
+    background-color: rgb(212, 95, 197);
+    grid-area: extra;
+    padding: var(--my-padding);
+}
+
+footer {
+    align-items: center;
+    display: grid;
+    background-color: rgb(224, 221, 11);
+    grid-area: banner;
+    padding: var(--my-padding);
+}
+
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.3fr 0.8fr 1fr 0.5fr 0.5fr;
+        grid-template-areas: 
+        "header header header"
+        "hero hero hero"
+        "menu main main"
+        "menu banner banner"
+        "menu extra image"
+        ;
+    }
+}
+
+@media (max-width: 480px) {
+        .container {
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.5fr 0.5fr 1.3fr 2fr 1fr 1fr 1fr;
+            grid-template-areas: 
+        "header"
+        "menu"
+        "hero"
+        "main"
+        "banner"
+        "extra"
+        "image"
+    }
+    }
+    
